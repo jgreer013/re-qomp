@@ -1,5 +1,6 @@
 import sys
-
+import file_parse as fp
+import story_importance as si
 
 
 def main():
@@ -10,7 +11,7 @@ def main():
     print("Error: No Filename given/found")
     return
     
-  
+  userStories = fp.parseFile(fName)
   
   
   
