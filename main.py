@@ -1,7 +1,7 @@
 import sys
 import file_parse as fp
 import story_importance as si
-
+import distance_metric as dm
 
 
 
@@ -32,7 +32,7 @@ def main():
   if (filterWord != ""):
     userStories = si.getRelevantStories(userStories, "Workgroup")
     
-  
+  dist_mat = dm.getDistanceMatrix(userStories)
     
   
   

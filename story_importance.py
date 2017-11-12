@@ -13,7 +13,6 @@ def getRelevantStories(list_of_stories, relevantString):
   # Basic method which can be expanded upon later for other uses
   for story in list_of_stories:
     wordList = story.split(" ")
-    #print(wordList)
     for word in wordList:
       if (word.find(normString) != -1):
         relevantStories.append(story)
