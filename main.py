@@ -33,6 +33,15 @@ def main():
     userStories = si.getRelevantStories(userStories, "Workgroup")
     
   dist_mat = dm.getDistanceMatrix(userStories)
+  #print(dist_mat[0])
+  
+  threshold = 0.01
+  
+  for i in xrange(len(dist_mat)):
+    for j in xrange(i, len(dist_mat)):
+      if (i != j and dist_mat[i][j] <= threshold):
+        print(str(i+1) + "," + str(j+1))
+  
     
   
   
