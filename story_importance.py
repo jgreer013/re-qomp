@@ -7,15 +7,21 @@ def getRelevantStories(list_of_stories, relevantString):
   
   # Normalize string using same mechanism as read-in lines
   normString = fp.preProcessStory(fp.preProcessLine(relevantString))
-  relevantStories = []
+  relevantStories = {}
   
   # Find all user stories relevant by checking if string is contained
   # Basic method which can be expanded upon later for other uses
   for story in list_of_stories:
     wordList = story.split(" ")
     for word in wordList:
+      if not relevantString:
+        story_num = filter(str.isdigit, wordList[0])
+        relevantStories[int(story_num)] = story
+        break
+        
       if (word.find(normString) != -1):
-        relevantStories.append(story)
+        story_num = filter(str.isdigit, wordList[0])
+        relevantStories[int(story_num)] = story
         break;
         
   return relevantStories
